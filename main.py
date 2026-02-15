@@ -76,19 +76,20 @@ def main():
     }
 
     # Початкові контакти для тесту
-    contacts: Dict[str, str] = {
-        "Alexander": "+380501234567",
-        "Maria": "+380631112233",
-        "Igor": "+380671234890",
-        "Anna": "+380931223344",
-        "Victor": "+380991112222",
-        "Olena": "+380671234111",
-        "Sergey": "+380501112233",
-        "Katerina": "+380631234567",
-        "Michael": "+380971112345",
-        "Tatyana": "+380931234567"
-    }
+    # contacts: Dict[str, str] = {
+    #     "Alexander": "+380501234567",
+    #     "Maria": "+380631112233",
+    #     "Igor": "+380671234890",
+    #     "Anna": "+380931223344",
+    #     "Victor": "+380991112222",
+    #     "Olena": "+380671234111",
+    #     "Sergey": "+380501112233",
+    #     "Katerina": "+380631234567",
+    #     "Michael": "+380971112345",
+    #     "Tatyana": "+380931234567"
+    # }
 
+    contacts: Dict[str, str] = {}
     print("Welcome to the assistant bot!")
     while True:
         user_input = input("Enter a command: ")
