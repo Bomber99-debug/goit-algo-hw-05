@@ -24,7 +24,7 @@ def parse_log_line(line: str) -> Optional[dict[str, str]]:
             }
 
 
-def load_logs(file_path: Path, encoding: str = "utf-8") -> list[dict[str, str]]:
+def load_logs(file_path: str) -> list:
     """
     Завантажує всі рядки з лог-файлу та парсить їх за допомогою parse_log_line.
     Повертає список словників, де кожен словник — один лог.
@@ -32,7 +32,7 @@ def load_logs(file_path: Path, encoding: str = "utf-8") -> list[dict[str, str]]:
     log_entries: List[dict[str, str]] = []
 
     try:
-        with file_path.open(encoding=encoding) as file:
+        with file_path.open(encoding="utf-8") as file:
             for line in file:
                 log_entry = parse_log_line(line)
                 if log_entry:

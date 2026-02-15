@@ -28,23 +28,22 @@ def parse_input(user_input):
 # Додає новий контакт у словник contacts
 @input_error
 def add_contact(args: list, contacts: dict) -> str:
-    try:
-        name, phone = args
-        contacts[name] = phone
-        return "Contact added."
-    except ValueError as e:
-        return "Name and phone number not recognized"
+    name, phone = args
+    if args[0] not in contacts:
+            contacts[name] = phone
+            return "Contact added."
+    return "The contact is already in the phonebook."
 
 
 # Змінює телефон існуючого контакту або додає новий
 @input_error
 def change_contact(args: list, contacts: dict) -> str:
-    try:
-        name, phone = args
+    name, phone = args
+    if args[0] in contacts:
         contacts[name] = phone
         return "Contact updated."
-    except:
-        return "Name and phone number not recognized"
+    return "The contact is not in the phonebook."
+
 
 
 # Показує номер телефону конкретного контакту
